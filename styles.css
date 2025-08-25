@@ -1,0 +1,153 @@
+body {
+  text-align: center;
+  background-color: #283149;
+  font-family: "Arvo", cursive;
+}
+
+.nav {
+  margin-top: 40px;
+}
+
+.instrument {
+  background-color: #DBEDF3;
+  padding: 5px 15px;
+  margin-top: 20px;
+  color: #283149;
+  font-size: 2rem;
+  text-decoration: none;
+  text-shadow: 1.5px 0 #DA0463;
+  border-top: 1px solid transparent; /* Invisible but effective */
+  border: 8px solid #404B69;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 5rem;
+  color: #DBEDF3;
+  text-shadow: 3px 0 #DA0463;
+}
+
+footer {
+  color: #DBEDF3;
+  font-family: sans-serif;
+}
+
+.w.drum {
+  background-image: url("./images/tom1.png");
+}
+
+.a.drum {
+  background-image: url("./images/tom2.png");
+}
+
+.s.drum {
+  background-image: url("./images/tom3.png");
+}
+
+.d.drum {
+  background-image: url("./images/tom4.png");
+}
+
+.j.drum {
+  background-image: url("./images/snare.png");
+}
+
+.k.drum {
+  background-image: url("./images/crash.png");
+}
+
+.l.drum {
+  background-image: url("./images/kick.png");
+}
+
+.set {
+  display: inline-flex;
+  margin: 5% auto;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.pressed {
+  box-shadow: 0 3px 4px 0 #DBEDF3;
+  opacity: 0.5;
+}
+
+.red {
+  color: red;
+}
+
+.drum {
+  outline: none;
+  border: 10px solid #404B69;
+  font-size: 5rem;
+  font-family: 'Arvo', cursive;
+  line-height: 2;
+  font-weight: 900;
+  color: #DA0463;
+  text-shadow: 3px 0 #DBEDF3;
+  border-radius: 15px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  margin: 10px;
+  background-color: white;
+}
+
+.piano {
+  position: relative;
+  border: 10px solid #404B69;
+  border-radius: 15px;
+  padding: 0 10px;
+  height: 250px;
+  display: flex;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.piano-key {
+  position: relative;
+  width: 50px;
+  height: 250px;
+  margin: 0 2px;
+  z-index: 1;
+  border-radius: 0 0 6px 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 15px;
+  font-weight: bold;
+  color: #333;
+  user-select: none;
+}
+
+.white-key {
+  border: 1px solid #ddd;
+}
+
+.black-key {
+  position: absolute;
+  width: 30px;
+  height: 150px;
+  background-color: black;
+  border: 1px solid #444;
+  border-radius: 0 0 4px 4px;
+  z-index: 2;
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.db4 { left: 48px; }
+.eb4 { left: 102px; }
+.gb4 { left: 208px; }
+.ab4 { left: 262px; }
+.bb4 { left: 316px; }
