@@ -1,5 +1,5 @@
-var drumLength = document.querySelectorAll(".drum").length;
-var pianoLength = document.querySelectorAll(".piano-key").length;
+var drumLength = $(".drum").length;
+var pianoLength = $(".piano-key").length;
 
 var activeInstrument = window.location.pathname.includes("piano.html") 
     ? "Piano" 
@@ -16,15 +16,15 @@ $(".instrument").on("click", function() {
     }
 });
 
-for (let index = 0; index < drumLength; index++) {
-    document.querySelectorAll(".drum")[index].addEventListener("click", function () {
-        var buttonInnerHTML = this.innerHTML;
-        makeDrumSound(buttonInnerHTML);
-        buttonAnimation(buttonInnerHTML);
-    });
-}
 
-document.addEventListener("keydown", function (event) {
+$(".drum").on("click", function () {
+    var buttonInnerHTML = this.innerHTML;
+    makeDrumSound(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML);
+});
+
+
+$(document).on("keydown", function (event) {
     const key = event.key.toLowerCase();
     if (activeInstrument === 'Piano') {
         makePianoSound(key);
@@ -69,14 +69,13 @@ function makeDrumSound(key) {
     }
 }
 
-for (let index = 0; index < pianoLength; index++) {
-    document.querySelectorAll(".piano-key")[index].addEventListener("click", function () {
-        var buttonInnerHTML = this.innerHTML;
-        console.log(buttonInnerHTML);
-        makePianoSound(buttonInnerHTML);
-        buttonAnimation(buttonInnerHTML);
-    });
-}
+
+$(".piano-key").on("click", function () {
+    var buttonInnerHTML = this.innerHTML;
+    console.log(buttonInnerHTML);
+    makePianoSound(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML);
+});
 
 function makePianoSound(key) {
     switch(key) {
@@ -133,9 +132,9 @@ function makePianoSound(key) {
 }
 
 function buttonAnimation(currentKey) {
-    var activeButton = document.querySelector("." + currentKey);
-    activeButton.classList.add("pressed");
+    var activeButton = $("." + currentKey);
+    activeButton.addClass("pressed");
     setTimeout(function() {
-        activeButton.classList.remove("pressed");
+        activeButton.removeClass("pressed");
     }, 100);
 }
